@@ -1,0 +1,79 @@
+.ContentFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5; 
+}
+
+.ContentSubFooter {
+    width: 90%; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.ContentLeft {
+    display: flex;
+    flex-direction: row;
+}
+.ContentRigth{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+}
+.ContentLeft {
+    flex: 1;
+}
+
+.ContentRigth {
+    flex: 1;
+    text-align: right; 
+}
+
+#ImgLogo {
+    width: 25%; 
+    /* max-width: 120px;  */
+    height: auto;
+    margin-bottom: 10px; 
+}
+
+.ContentRigth input[type="email"] {
+    padding: 8px;
+    margin-bottom: 10px; /* Espaciado inferior */
+    width: 80%; /* Ajustar el ancho del campo de texto */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.ContentRigth input[type="button"] {
+    padding: 8px 15px;
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff;
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ContentRigth input[type="button"]:hover {
+    background-color: #0056b3; /* Color al pasar el ratón */
+}
+
+.hrFooter {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ccc; /* Línea horizontal delgada */
+    margin: 20px 0;
+}
+
+.ContentFooter p {
+    font-size: 14px;
+    color: #555; /* Color de texto gris */
+    text-align: center;
+    margin: 10px 0 0; /* Espaciado en el pie de página */
+}
