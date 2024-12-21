@@ -1,0 +1,107 @@
+<div class="container">
+  <!-- Navbar Horizontal Fijo -->
+  <nav class="navbar" id="navbar">
+      <div class="profile-container" id="profileContainer" onclick="openModal()">
+          <img src="../../assets/img/usuario.jpeg" alt="Foto de perfil" class="profile-img" id="profileImg"/>
+      </div>
+      <ul class="nav-options" id="navOptions">
+          <li id="transferenciasNav" onclick="showSection('transferencias')">
+              <i class="fas fa-exchange-alt"></i> Transferencias
+          </li>
+          <li id="movimientosNav" onclick="showSection('movimientos')">
+              <i class="fas fa-list-alt"></i> Movimientos
+          </li>
+          <li id="precioMonedaNav" onclick="showSection('precio-moneda')">
+              <i class="fas fa-coins"></i> Precio de la Moneda
+          </li>
+          <li id="conversionNav" onclick="showSection('conversion')">
+              <i class="fas fa-random"></i> Conversión
+          </li>
+          <li id="estadisticasNav" onclick="showSection('estadisticas')">
+              <i class="fas fa-chart-line"></i> Estadísticas
+          </li>
+      </ul>
+  </nav>
+
+  <!-- Main content area -->
+  <div class="main-content" id="mainContent">
+      <!-- Transferencias -->
+      <div id="transferencias" class="content-section" data-section="transferencias">
+        <h2>Transferencias</h2>
+        <p>Realiza tus transferencias de manera rápida y segura.</p>
+        
+        <!-- Formulario de Transferencia -->
+        <form id="transferForm">
+            <label for="accountNumber">Número de Cuenta:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            
+            <label for="accountType">Tipo de Cuenta:</label>
+            <select id="accountType" name="accountType" required>
+                <option value="ahorros">Ahorros</option>
+                <option value="corriente">Corriente</option>
+            </select>
+            
+            <label for="amount">Cantidad a Transferir:</label>
+            <input type="number" id="amount" name="amount" required>
+    
+            <!-- Contenedor para checkbox y texto -->
+            <div class="favorites-container">
+                <label for="addToFavorites">Agregar a Favoritos:</label>
+                <input type="checkbox" id="addToFavorites" name="addToFavorites">
+            </div>
+            
+            <button type="submit" class="modal-btn">Realizar Transferencia</button>
+        </form>
+    
+        <div id="favoritesList">
+            <h3>Transferencias Favoritas</h3>
+            <ul id="favoritesListUL"></ul>
+        </div>
+    </div>
+    
+
+      <!-- Movimientos -->
+      <div id="movimientos" class="content-section" data-section="movimientos">
+          <h2>Movimientos</h2>
+          <p>Consulta todos tus movimientos bancarios y financieros aquí.</p>
+      </div>
+
+      <!-- Precio de la Moneda -->
+      <div id="precio-moneda" class="content-section" data-section="precio-moneda">
+          <h2>Precio de la Moneda</h2>
+          <p>Consulta el precio actual de la moneda y los cambios en el mercado.</p>
+      </div>
+
+      <!-- Conversión -->
+      <div id="conversion" class="content-section" data-section="conversion">
+          <h2>Conversión</h2>
+          <p>Convierte entre diferentes divisas de forma sencilla.</p>
+      </div>
+
+      <!-- Estadísticas -->
+      <div id="estadisticas" class="content-section" data-section="estadisticas">
+          <h2>Estadísticas</h2>
+          <p>Consulta estadísticas sobre tu cuenta y movimientos financieros.</p>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="userModal">
+      <div class="modal-content" id="modalContent">
+          <h2>Información del Usuario</h2>
+          <div class="user-info" id="userInfo">
+              <p><strong>Nombre:</strong> <span id="user-name"></span></p>
+              <p><strong>Email:</strong> <span id="user-email"></span></p>
+          </div>
+          <div class="modal-actions" id="modalActions">
+              <button onclick="updateInfo()" id="updateInfoBtn" class="modal-btn">Actualizar Información</button>
+              <button onclick="deactivateAccount()" id="deactivateAccountBtn" class="modal-btn">Desactivar Cuenta</button>
+          </div>
+          <button onclick="logout()" id="logoutBtn" class="modal-btn">Cerrar Sesión</button>
+          <!-- Cerrar Modal con el ícono de Font Awesome (X) -->
+          <button class="close-btn" onclick="closeModal()" id="closeModalBtn">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+  </div>
+</div>

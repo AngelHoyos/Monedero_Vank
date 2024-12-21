@@ -13,6 +13,8 @@
 .lado-izquierda {
     background-image: url('../../assets/img/fondo.jpeg');
     background-position: center;
+    box-shadow: 2px 0 4px #89121280;
+
     background-size: cover;
     background-repeat: no-repeat;
     width: 35%;

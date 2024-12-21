@@ -5,6 +5,8 @@
 
 .left-side {
     background-image: url('../../assets/img/fondo.jpeg');
+    box-shadow: 2px 0 4px #89121280;
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
