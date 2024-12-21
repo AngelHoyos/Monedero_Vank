@@ -1,0 +1,131 @@
+<div id="container-principal">
+    <div class="lado-izquierda">
+        <h1><span class="marca">Mondero</span> Vank</h1>
+    </div>
+    <div class="lado-derecho">
+        <!-- Botones para seleccionar el método de registro -->
+        <div id="seleccion-registro">
+            <button type="button" id="boton-registro-normal">Registro normal</button>
+            <button type="button" id="boton-registro-pin">Registro con PIN</button>
+        </div>
+        
+        <!-- Formulario de registro -->
+        <form id="formulario-registro" style="display: none;">
+            <span id="boton-regresar" class="flecha-regreso" style="display:none;">
+                <i class="fas fa-arrow-left"></i> <!-- FontAwesome flecha de regreso -->
+            </span>
+
+            <!-- Formulario tradicional de nombre completo, correo y contraseña -->
+            <div id="formulario-registro-normal" class="contenedor-formulario">
+                <div class="grupo-input">
+                    <label for="nombre-completo">Nombre Completo</label>
+                    <input type="text" id="nombre-completo" name="nombre-completo" placeholder="Ingresa tu nombre completo">
+                </div>
+                <div class="grupo-input">
+                    <label for="correo-electronico">Correo Electrónico</label>
+                    <input type="email" id="correo-electronico" name="correo-electronico" placeholder="Ingresa tu correo electrónico">
+                </div>
+                <div class="grupo-input">
+                    <label for="nombre-usuario">Nombre de Usuario</label>
+                    <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="Ingresa tu nombre de usuario">
+                </div>
+                <div class="grupo-input">
+                    <label for="contrasena-usuario">Contraseña</label>
+                    <input type="password" id="contrasena-usuario" name="contrasena-usuario" placeholder="Ingresa tu contraseña">
+                </div>
+            </div>
+            
+            <!-- Formulario de PIN de 4 dígitos -->
+            <div id="formulario-registro-pin" class="contenedor-formulario" style="display:none;">
+                <div class="grupo-input">
+                    <label for="codigo-verificacion">Ingresa PIN de 4 dígitos</label>
+                    <input type="text" id="codigo-verificacion" name="codigo-verificacion" placeholder="PIN de 4 dígitos" maxlength="4" pattern="\d{4}">
+                </div>
+            </div>
+
+            <button type="submit">Registrarse</button>
+            
+            <!-- Enlaces para "¿Ya tienes cuenta?" y "¿Olvidaste tu contraseña?" -->
+            <div id="enlaces-footer">
+                <a href="#" id="enlace-login">¿Ya tienes cuenta? Iniciar sesión</a>
+                <a href="#" id="enlace-olvido-password">¿Olvidaste tu contraseña?</a>
+            </div>
+        </form>
+    </div>
+    <div style="width: 20px; height: 100%; background-color: rgba(128, 128, 128, 0.507); margin-right: 10px"></div>
+    <div style="width: 20px; height: 100%; background-color: rgba(128, 128, 128, 0.507)"></div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const botonRegistroNormal = document.getElementById('boton-registro-normal');
+        const botonRegistroPin = document.getElementById('boton-registro-pin');
+        const formularioRegistro = document.getElementById('formulario-registro');
+        const formularioRegistroNormal = document.getElementById('formulario-registro-normal');
+        const formularioRegistroPin = document.getElementById('formulario-registro-pin');
+        const botonRegresar = document.getElementById('boton-regresar');
+
+        // Función para mostrar el formulario de registro
+        const mostrarFormularioRegistro = () => {
+            formularioRegistro.style.display = 'block';
+            botonRegresar.style.display = 'block'; // Mostrar flecha de regresar
+        };
+
+        // Función para mostrar el formulario de registro normal
+        const mostrarFormularioRegistroNormal = () => {
+            mostrarFormularioRegistro();
+            formularioRegistroNormal.style.display = 'block';
+            formularioRegistroPin.style.display = 'none';
+        };
+
+        // Función para mostrar el formulario de registro con PIN
+        const mostrarFormularioRegistroPin = () => {
+            mostrarFormularioRegistro();
+            formularioRegistroNormal.style.display = 'none';
+            formularioRegistroPin.style.display = 'block';
+        };
+
+        // Manejar la elección de registro normal
+        botonRegistroNormal.addEventListener('click', mostrarFormularioRegistroNormal);
+
+        // Manejar la elección de registro con PIN
+        botonRegistroPin.addEventListener('click', mostrarFormularioRegistroPin);
+
+        // Manejar la acción de regresar
+        botonRegresar.addEventListener('click', () => {
+            formularioRegistro.style.display = 'none';
+            botonRegresar.style.display = 'none'; // Ocultar flecha de regresar
+        });
+
+        // Manejar el evento de envío del formulario
+        const form = document.getElementById('formulario-registro');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            const nombreCompleto = document.getElementById('nombre-completo').value.trim();
+            const correoElectronico = document.getElementById('correo-electronico').value.trim();
+            const nombreUsuario = document.getElementById('nombre-usuario').value.trim();
+            const contrasenaUsuario = document.getElementById('contrasena-usuario').value.trim();
+            const codigoVerificacion = document.getElementById('codigo-verificacion').value.trim();
+
+            // Validación según el formulario visible
+            if (formularioRegistroNormal.style.display === 'block') {
+                if (nombreCompleto === '' || correoElectronico === '' || nombreUsuario === '' || contrasenaUsuario === '') {
+                    alert('Por favor, completa todos los campos.');
+                } else {
+                    alert('Registro exitoso con datos normales.');
+                    console.log('Nombre completo:', nombreCompleto);
+                    console.log('Correo:', correoElectronico);
+                    console.log('Nombre de usuario:', nombreUsuario);
+                    console.log('Contraseña:', contrasenaUsuario);
+                }
+            } else if (formularioRegistroPin.style.display === 'block') {
+                if (codigoVerificacion.length === 4) {
+                    alert('Registro exitoso con PIN de 4 dígitos.');
+                    console.log('PIN ingresado:', codigoVerificacion);
+                } else {
+                    alert('Por favor, ingresa un PIN de 4 dígitos válido.');
+                }
+            }
+        });
+    });
+</script>
