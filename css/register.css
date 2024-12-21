@@ -1,71 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 #container-principal {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh; /* Ajusta la altura al 100% de la pantalla */
+    flex-direction: row;
+}
+
+.lado-izquierda {
+    background-image: url('../../assets/img/fondo.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Para mejorar la visibilidad del texto */
+}
+
+.lado-izquierda h1 {
+    font-size: 9.5rem;
+    margin-top: 20px;
+    white-space: pre-line;
+    width: 355px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    line-height: 1;
+}
+
+.lado-izquierda .marca {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.lado-derecho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    padding: 20px; /* Añadido para mayor espacio alrededor del formulario */
 }
 
 #formulario-registro {
+    width: 100%;
+    max-width: 450px; /* Mejor control de la anchura */
+    padding: 30px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-.contenedor-formulario .grupo-input {
+.contenedor-formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.grupo-input {
     margin-bottom: 15px;
 }
 
-.contenedor-formulario label {
-    font-weight: bold;
+.grupo-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Mejor legibilidad */
 }
 
-.contenedor-formulario input {
-    padding: 10px;
+.grupo-input input {
     width: 100%;
+    padding: 12px;
     margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em; /* Aseguramos que la fuente tenga un tamaño adecuado */
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
+    background-color: yellow;
     border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.2em;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #e6e600;
+}
+
+#boton-regresar {
+    height: auto;
+    width: 100%;
+    top: 0;
+}
+
+.flecha-regreso {
+    font-size: 2rem;
+    cursor: pointer;
+    color: yellow;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.flecha-regreso:hover {
+    color: #0056b3;
+}
+
+#enlaces-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.9em;
 }
 
 #enlaces-footer a {
     text-decoration: none;
-    color: #007bff;
-    margin: 0 10px;
+    color: black;
 }
 
 #enlaces-footer a:hover {
     text-decoration: underline;
-}
-
-#boton-registro-normal, #boton-registro-pin {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-#boton-registro-normal:hover, #boton-registro-pin:hover {
-    background-color: #0056b3;
-}
-
-#boton-regresar {
-    display: inline-block;
-    margin-top: 20px;
-    cursor: pointer;
-    color: #007bff;
-    font-size: 20px;
-}
-
-#boton-regresar:hover {
-    color: #0056b3;
 }

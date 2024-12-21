@@ -3,18 +3,9 @@
         <h1><span class="monedro">Mondero</span> Vank</h1>
     </div>
     <div class="right-side">
-        <!-- Botones para seleccionar el método de inicio de sesión -->
-        <div id="auth-selection">
-            <button type="button" id="traditional-login-btn">Inicio de sesión tradicional</button>
-            <button type="button" id="code-login-btn">Inicio de sesión con código</button>
-        </div>
-        
         <!-- Formulario de login -->
-        <form id="login-form" style="display: none;">
-            <span id="back-btn" class="back-arrow" style="display:none;">
-                <i class="fas fa-arrow-left"></i> <!-- FontAwesome flecha de regreso -->
-            </span>
-            <!-- Flecha de regresar -->
+        <form id="login-form">
+
 
             <!-- Formulario de usuario y contraseña -->
             <div id="traditional-login-form" class="auth-form">
@@ -25,14 +16,6 @@
                 <div class="form-group">
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña">
-                </div>
-            </div>
-            
-            <!-- Formulario de código de 4 dígitos -->
-            <div id="code-login-form" class="auth-form" style="display:none;">
-                <div class="form-group">
-                    <label for="code">Ingresa código de 4 dígitos</label>
-                    <input type="text" id="code" name="code" placeholder="Código de 4 dígitos" maxlength="4" pattern="\d{4}">
                 </div>
             </div>
 
@@ -48,5 +31,3 @@
     <div style="width: 20px; height: 100%; background-color: rgba(128, 128, 128, 0.507); margin-right: 10px"></div>
     <div style="width: 20px; height: 100%; background-color: rgba(128, 128, 128, 0.507)"></div>
 </div>
-
-
